@@ -1,0 +1,54 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Resource",
+"class": "ConsumableItem",
+"language": "GDScript",
+"path": "res://src/item_system/ConsumableItem.gd"
+}, {
+"base": "Resource",
+"class": "Equipment",
+"language": "GDScript",
+"path": "res://src/item_system/Equipment.gd"
+}, {
+"base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://src/item_system/Item.gd"
+} ]
+_global_script_class_icons={
+"ConsumableItem": "",
+"Equipment": "",
+"Item": ""
+}
+
+[application]
+
+config/name="3d Npc Trading Demo"
+run/main_scene="res://start.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+game="*res://game.tscn"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+
+[input]
+
+compare={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"unicode":0,"echo":false,"script":null)
+ ]
+}

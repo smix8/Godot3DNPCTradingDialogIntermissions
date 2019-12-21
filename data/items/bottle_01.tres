@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://assets/images/inventory/bottle_01.png" type="Texture" id=1]
+[ext_resource path="res://src/item_system/Equipment.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+item_id = "bottle_01"
+display_name = "Bottle"
+description = "A bottle without content"
+image = ExtResource( 1 )
+max_stack = 1
+unique = true
+sellable = true
+base_price = 20
+category = 1
+rarity = 5
+slot = 6

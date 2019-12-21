@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://assets/images/inventory/flashlight_01.png" type="Texture" id=1]
+[ext_resource path="res://src/item_system/Equipment.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+item_id = "flashlight_01"
+display_name = "Flashlight"
+description = "Real heros fight against the darkness"
+image = ExtResource( 1 )
+max_stack = 1
+unique = false
+sellable = true
+base_price = 80
+category = 4
+rarity = 6
+slot = 0

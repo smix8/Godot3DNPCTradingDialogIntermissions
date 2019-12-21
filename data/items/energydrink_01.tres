@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://src/item_system/ConsumableItem.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/inventory/item_energydrink_01.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+item_id = "energydrink_01"
+display_name = "Energydrink"
+description = "Are you thirsty?"
+image = ExtResource( 2 )
+max_stack = 5
+unique = false
+sellable = true
+base_price = 10
+category = 1
+rarity = 1

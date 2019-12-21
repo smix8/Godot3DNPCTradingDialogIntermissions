@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/item_system/Split_Stack.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Button_medium_Roboto.tres" type="DynamicFont" id=2]
+
+[node name="Split_Stack" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 74.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 240, 60 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_right = 120.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 120, 60 )
+custom_fonts/font = ExtResource( 2 )
+text = "Accept"
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer"]
+margin_left = 124.0
+margin_right = 244.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 120, 60 )
+max_value = 20.0
+rounded = true
+align = 1
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="value_changed" from="HBoxContainer/SpinBox" to="." method="_on_SpinBox_value_changed"]

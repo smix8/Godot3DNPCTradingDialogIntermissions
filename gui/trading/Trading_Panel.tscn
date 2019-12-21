@@ -1,0 +1,355 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/trading/Trading_Panel.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Label_Big_Roboto.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/trading/Trading_Item_Dropzone.gd" type="Script" id=3]
+[ext_resource path="res://fonts/Button_medium_Roboto.tres" type="DynamicFont" id=4]
+[ext_resource path="res://gui/trading/Item_Tooltip.tscn" type="PackedScene" id=5]
+[ext_resource path="res://animations/GUI_Menu_AnimationPlayer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://gui/trading/Trading_Button_pressed.stylebox" type="StyleBox" id=7]
+[ext_resource path="res://gui/trading/Trading_Button_hover.stylebox" type="StyleBox" id=8]
+[ext_resource path="res://gui/trading/Trading_Button.stylebox" type="StyleBox" id=9]
+
+[node name="Trading_Panel" type="Control"]
+modulate = Color( 1, 1, 1, 0.901961 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+default_color = Color( 1, 1, 1, 0.301961 )
+highlight_color = Color( 0.266667, 1, 0, 0.74902 )
+money_plus_color = Color( 0, 1, 0.156863, 1 )
+money_minus_color = Color( 1, 0.00392157, 0.00392157, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="Control" parent="HBoxContainer"]
+margin_right = 573.0
+margin_bottom = 980.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Player"]
+modulate = Color( 1, 1, 1, 0.301961 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Player"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/Player/VBoxContainer"]
+margin_right = 573.0
+margin_bottom = 71.0
+custom_fonts/font = ExtResource( 2 )
+text = "Inventory"
+align = 1
+valign = 1
+
+[node name="Player_Money_Label" type="Label" parent="HBoxContainer/Player/VBoxContainer"]
+margin_top = 75.0
+margin_right = 573.0
+margin_bottom = 146.0
+custom_fonts/font = ExtResource( 2 )
+text = "Money"
+align = 1
+valign = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/Player/VBoxContainer"]
+margin_top = 150.0
+margin_right = 573.0
+margin_bottom = 980.0
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player_Itemgrid" type="GridContainer" parent="HBoxContainer/Player/VBoxContainer/ScrollContainer"]
+margin_right = 573.0
+margin_bottom = 830.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player_Item_Dropzone" type="Control" parent="HBoxContainer/Player"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exchange" type="Control" parent="HBoxContainer"]
+margin_left = 623.0
+margin_right = 1196.0
+margin_bottom = 980.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Exchange"]
+modulate = Color( 1, 1, 1, 0.3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Exchange"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/Exchange/VBoxContainer"]
+margin_right = 573.0
+margin_bottom = 145.0
+custom_fonts/font = ExtResource( 2 )
+text = "Trade
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/Exchange/VBoxContainer"]
+margin_top = 149.0
+margin_right = 573.0
+margin_bottom = 796.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Exchange/VBoxContainer/ScrollContainer"]
+margin_right = 573.0
+margin_bottom = 647.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Exchange_Player_ItemVBox" type="VBoxContainer" parent="HBoxContainer/Exchange/VBoxContainer/ScrollContainer/HBoxContainer"]
+margin_right = 284.0
+margin_bottom = 647.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Exchange_Trader_ItemVBox" type="VBoxContainer" parent="HBoxContainer/Exchange/VBoxContainer/ScrollContainer/HBoxContainer"]
+margin_left = 288.0
+margin_right = 573.0
+margin_bottom = 647.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Control" type="Control" parent="HBoxContainer/Exchange/VBoxContainer"]
+margin_top = 800.0
+margin_right = 573.0
+margin_bottom = 980.0
+rect_min_size = Vector2( 0, 180 )
+mouse_filter = 2
+
+[node name="Exchange_Dropzone" type="Control" parent="HBoxContainer/Exchange"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/Exchange"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -175.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="HBoxContainer/Exchange/VBoxContainer2"]
+margin_right = 573.0
+margin_bottom = 71.0
+custom_fonts/font = ExtResource( 2 )
+text = "Cost"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Exchange/VBoxContainer2"]
+margin_top = 75.0
+margin_right = 573.0
+margin_bottom = 175.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exchange_Confirm" type="Button" parent="HBoxContainer/Exchange/VBoxContainer2/HBoxContainer"]
+margin_right = 284.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 100 )
+size_flags_horizontal = 3
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
+text = "Confirm"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exchange_Abort" type="Button" parent="HBoxContainer/Exchange/VBoxContainer2/HBoxContainer"]
+margin_left = 288.0
+margin_right = 573.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 100 )
+size_flags_horizontal = 3
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
+text = "Leave"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trader" type="Control" parent="HBoxContainer"]
+margin_left = 1246.0
+margin_right = 1820.0
+margin_bottom = 980.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Trader"]
+modulate = Color( 1, 1, 1, 0.3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Trader"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/Trader/VBoxContainer"]
+margin_right = 574.0
+margin_bottom = 71.0
+custom_fonts/font = ExtResource( 2 )
+text = "Trader"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trader_Money_Label" type="Label" parent="HBoxContainer/Trader/VBoxContainer"]
+margin_top = 75.0
+margin_right = 574.0
+margin_bottom = 146.0
+custom_fonts/font = ExtResource( 2 )
+text = "Money"
+align = 1
+valign = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/Trader/VBoxContainer"]
+margin_top = 150.0
+margin_right = 574.0
+margin_bottom = 980.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="Trader_Itemgrid" type="GridContainer" parent="HBoxContainer/Trader/VBoxContainer/ScrollContainer"]
+margin_right = 574.0
+margin_bottom = 830.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trader_Item_Dropzone" type="Control" parent="HBoxContainer/Trader"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item_Tooltip" parent="." instance=ExtResource( 5 )]
+
+[node name="GUI_Menu_AnimationPlayer" parent="." instance=ExtResource( 6 )]
+
+[node name="Hints" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -273.5
+margin_top = -40.0
+margin_right = 273.5
+mouse_filter = 2
+size_flags_horizontal = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Hints"]
+margin_top = 2.0
+margin_right = 547.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 4 )
+text = "hold \"strg\" and click item for comparison"
+align = 1
+valign = 1
