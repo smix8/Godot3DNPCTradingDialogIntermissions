@@ -2,6 +2,8 @@
 # Godot 3D Drag&Drop NPC Trading with Interactions and Dialog
 Example project made with Godot 3.2 beta4
 
+No longer developed and therefor archived.
+
 ![trading_demo](https://user-images.githubusercontent.com/52464204/71304376-030e7f80-23c6-11ea-9f3d-e2355f64a188.gif)
 
 ## Features | Examples:
@@ -16,18 +18,6 @@ Example project made with Godot 3.2 beta4
 - Scripts for `utility` that `scans for images and items` in defined folders at startup and create a dictionary for convenient access by filename.
 This way you can always reorganize your image / item folder structure without breaking a million filepaths on projects that grow large
 - Ruby colors!
-
-
-## Future Addons:
-I wasn't able to provide the full code for the dialog and interactions part with this first release.
-It was way to dependent on my current dialog system so it has to wait until I can release the full dialog and camera system as well in the near future.
-- Godot 3D Dialogsystem and Camera
-- Example for changing trader dialog reactions on repetitive interactions
-- Example for trader dialog reactions depending on trade outcome
-e.g. did you rob them, did they make money from you, went everything equal or was it a high rarity item worth mentioning
-- Godot 3D LookAt controller
-- Example for controlling the traders animations for head and eye movement to react to the player interactions
-
 
 ## NOT included:
 - Yasmin my trader girl from the demo is not included, bring your own 3d character actors.
@@ -79,9 +69,4 @@ There are two optional parameters as well. `inventory_id` replaces the npcs real
 
 
 ## License
-MIT or my personal 'Don't care' license, do whatever you want with this example and create something fun and awesome with Godot.
-
-## Known Issues
-The code has some parts that may seem redundent ... and they are. I ripped this example from a larger project of mine and had to fix many dependencies by copy&pasting from old versions. It was a real hassle and I ran out of patient ... left those dead code blocks that didn't produce any issues for now. Will revisit it later with the dialog, camera and look_at integration.
-
-On rare occasion the drop exchange zones can get stuck and prevent further itemdrags. Annoying but nothing gamebreaking and fixed by pressing the cancel button. I was able to track the error down to the way godot handles mouse enter/exit signals under the hood (and chokes on them) but even with a workaround couldn't fix it completly for now.
+MIT.
